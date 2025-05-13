@@ -1,0 +1,11 @@
+services:
+  peeker:
+    container_name: peeker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    restart: always
+    environment:
+      - FLAG=FLAG{jago_bang_gg}

@@ -1,0 +1,29 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container-sqli
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    depends_on:
+      - php
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-container
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - 9000:9000
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container-sqli
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sqli
+    ports:
+      - 3306:3306
