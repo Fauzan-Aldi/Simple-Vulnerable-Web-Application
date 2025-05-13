@@ -1,7 +1,3 @@
-Berikut adalah versi penjelasan yang lebih **jelas dan terstruktur** dari dokumen tersebut:
-
----
-
 # 🛠️ Aplikasi Web Sederhana yang Rentan (Simple Vulnerable Web Application)
 
 ## 📌 Ringkasan
